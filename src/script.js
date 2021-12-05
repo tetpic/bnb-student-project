@@ -10,9 +10,29 @@ const swiper = new Swiper('.company-subdivisions', {
           prevEl: leftButton[0],
   },
   wrapperClass: 'swiper-wrapper',
-    autoHeight: true,
-    slideClass: 'subdivision',
+  autoHeight: true,
+  slideClass: 'subdivision',
+  // breakpoints: {
+  //   320: {
+      pagination: {
+        el: '.swiper-pagination'
+      }
+  //   }
+  // }
   });
+
+// const swiperEvents = new Swiper('.our-events', {
+//   // navigation: {
+//   //   nextEl: '.next',
+//   //   prevEl: '.prev',
+//   // },
+//   wrapperClass: 'swiper-wrapper',
+//   slideClass: 'event-section',
+//   // autoHeight: true,
+//   slidesPerView: 3,
+//   setWrapperSize: true,
+// });
+
 
 let navBlocks = document.querySelectorAll('.navigation__block');
 let backgroundImages = document.querySelectorAll('.main-background__image')
@@ -31,15 +51,16 @@ navBlocks.forEach(function(navBlock){
     });
 })
 
+let burgerMenuOn = document.querySelector('.burger')
+let burgerMenuOff = document.querySelector('.burger-off')
+let modalWindow = document.querySelector('.modal-window')
 
 
-const swiperEvents = new Swiper('.our-events', {
-  // navigation: {
-  //   nextEl: '.next',
-  //   prevEl: '.prev',
-  // },
-  wrapperClass: 'swiper-wrapper',
-  slideClass: 'event-section',
-  autoHeight: true,
-  // slidesPerView: 1,
-});
+burgerMenuOn.addEventListener('click', function (event) {
+  console.log('burger pushed')
+  modalWindow.classList.add('_visible')
+} )
+
+burgerMenuOff.addEventListener('click', function() {
+  modalWindow.classList.remove('_visible')
+} )
