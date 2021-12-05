@@ -1,7 +1,13 @@
+let leftButton = document.querySelectorAll('.left-button');
+let rightButton = document.querySelectorAll('.right-button');
+
+
 const swiper = new Swiper('.company-subdivisions', {
   navigation: {
-          nextEl: '.right-button',
-          prevEl: '.left-button',
+          // nextEl: '.right-button',
+          nextEl: rightButton[0],
+          // prevEl: '.left-button',
+          prevEl: leftButton[0],
   },
   wrapperClass: 'swiper-wrapper',
     autoHeight: true,
@@ -24,3 +30,16 @@ navBlocks.forEach(function(navBlock){
       swiper.slideTo(i);
     });
 })
+
+
+
+const swiperEvents = new Swiper('.our-events', {
+  // navigation: {
+  //   nextEl: '.next',
+  //   prevEl: '.prev',
+  // },
+  wrapperClass: 'swiper-wrapper',
+  slideClass: 'event-section',
+  autoHeight: true,
+  // slidesPerView: 1,
+});
