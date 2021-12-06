@@ -112,12 +112,12 @@
   font-size: 1rem;
   justify-content: normal;
   margin-top: 3%;
-  position: inherit;
+  position: relative;
 }
 .header-inner .burger {
   display: none;
 }
-@media (min-width: 320px) and (max-width: 564px) {
+@media (min-width: 320px) and (max-width: 568px) {
   .header-inner {
     display: flex;
     flex-direction: row;
@@ -177,7 +177,7 @@
   top: 0;
   left: 0;
   width: 305px;
-  height: 689px;
+  height: 568px;
   background-color: white;
   opacity: 0.98;
   z-index: 10;
@@ -188,12 +188,26 @@
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1rem;
-  margin: 15px 4px 6px 15px;
+  margin: 15px 15px 6px 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 280px;
-  border-bottom: black solid 1px;
+  border-bottom: rgba(0, 0, 0, 0.247) solid 1px;
+}
+.modal-window .contacts-modal-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0px 15px 0px 15px;
+  height: 143px;
+  border-bottom: rgba(0, 0, 0, 0.247) solid 1px;
+}
+.modal-window .icons-modal {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 15px 20px 15px;
+  justify-content: space-between;
 }
 
 ._visible {
@@ -201,33 +215,31 @@
 }
 
 .main-background-images {
-  min-height: 938px;
+  min-height: 960px;
+  overflow: hidden;
+  min-width: 100%;
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 1920px;
 }
 @media (min-width: 320px) and (max-width: 568px) {
   .main-background-images {
-    max-height: 567px;
-    width: 100%;
-    overflow: hidden;
+    min-height: 568px;
   }
 }
 .main-background-images .main-background__image {
-  background-color: #00000070;
-  position: absolute;
-  max-width: 1920px;
+  min-width: 100%;
   height: 100%;
+  background-color: #00000070;
+  position: inherit;
   opacity: 0;
   transition: 0.3s linear;
+  object-fit: cover;
 }
 @media (min-width: 320px) and (max-width: 568px) {
   .main-background-images .main-background__image {
     max-height: 567px;
     overflow: hidden;
-    margin-left: -100%;
+    margin-left: -75%;
   }
 }
 .main-background-images .image_visible {
@@ -335,6 +347,7 @@
   }
   .company-subdivisions .swiper-pagination {
     display: block;
+    padding-bottom: 10px;
   }
 }
 
@@ -433,6 +446,11 @@
   min-height: 642px;
   background-color: #F9F9F9;
 }
+@media (min-width: 320px) and (max-width: 568px) {
+  .our-events {
+    margin-top: 18px;
+  }
+}
 
 .our-events-header {
   padding-bottom: 3%;
@@ -443,12 +461,24 @@
   justify-content: space-between;
   align-items: center;
 }
+@media (min-width: 320px) and (max-width: 568px) {
+  .our-events-header {
+    padding-top: 60px;
+  }
+}
 
 .header-events {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-size: 1.875rem;
+}
+@media (min-width: 320px) and (max-width: 568px) {
+  .header-events {
+    font-size: 1.25rem;
+    width: 160px;
+    line-height: 25px;
+  }
 }
 
 .our-events-sections {
