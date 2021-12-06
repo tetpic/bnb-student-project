@@ -864,6 +864,11 @@
 
 // =========PHOTO REPORTS============
 
+
+.recent-photo-reports {
+  overflow: hidden;
+}
+
 .photo-reports-header {
 
   padding-top: 5%;
@@ -871,6 +876,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @media (min-width: 320px) and (max-width: 568px) {
+    .header-events {
+      font-size: 1.875rem;
+      line-height: 37px;
+      padding-top: 50px;
+    }
+  }
 }
 
 .photo-reports {
@@ -878,6 +890,9 @@
   flex-direction: row;
   padding-top: 3%;
   padding-bottom: 8%;
+  @media (min-width: 320px) and (max-width: 568px) {
+    height: 207px;
+  }
  
 
   
@@ -885,9 +900,13 @@
 }
 
 .photo-report-block {
-  
   margin-right: 3%;
   position: relative;
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+
   .report-description {
     width: 80%;
     bottom: 10%;
@@ -910,9 +929,25 @@
     }
   }
 }
+.mobile {
+  display: none;
+  @media (min-width: 320px) and (max-width: 568px) {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+  }
+}
+
+.desktop {
+  @media (min-width: 320px) and (max-width: 568px) {
+    display: none;
+  }
+}
 
 
 // =============FOOOOOOTER===========
+
 
 .footer {
   background-color: #2D2D2D;
@@ -985,11 +1020,46 @@
   justify-content: space-between;
 }
 
+@media (min-width: 320px) and (max-width: 568px) {
+  .footer-header {
+    flex-direction: column;
+   align-items: center;
+   height: 572px;
+  
+  }
+  .call-request__link {
+    text-align: center;
+  }
+
+  .contacts {
+    .tel-numbers {
+    align-items: center;
+        .tel-number {
+          width: 100%;
+          text-align: center;
+        }
+    }
+
+  }
+  .email-form {
+    padding-bottom: 50px;
+  }
+
+  .social-media {
+    width: 100%;
+    align-items: flex-end;
+  }
+
+  .mail__description {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
 
 
 // ==========COPYRIGHTS================
 
-.flex-wrapper {
+.footer-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1026,4 +1096,22 @@
     color: white;
   }
 
+}
+
+@media (min-width: 320px) and (max-width: 568px) {
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+  }
+
+  .copyrights {
+    height: 154px;
+  }
+  .article-links {
+    flex-direction: column;
+    align-items: center;
+    height: 60px;
+  }
 }
