@@ -218,7 +218,7 @@ let basketCounter = document.querySelector('.basket__counter')
 
 let basketCounterLength = () => {
   // basketCounter.classList.add('disabled')
-  basketCounter.innerText = prompt('сколько будем покупать?')
+  // basketCounter.innerText = prompt('сколько будем покупать?')
   
   if (+(basketCounter.innerText) == +0) {
     
@@ -239,9 +239,18 @@ basketCounterLength()
 
 let sectionDescription = document.querySelectorAll('.section__description')
 
-sectionDescription.forEach(function (bigContent) {
-  sectionIndex = Array.from(sectionDescription)
-  if (+(sectionDescription[e].innerText.length) >= 100 {
-    
+let setHideTextfunction = () => {
+  // let index = Array.from(sectionDescription)
+  for (let i = 0; i <= sectionDescription.length; i++) {
+    if (+(sectionDescription[i].innerText.length) >= +100){
+      sectionDescription[i].classList.add('_hide_text')
+    }
+    else {
+      console.log ('error')
+    }
+  
   }
-})
+  
+}
+
+// setHideTextfunction();

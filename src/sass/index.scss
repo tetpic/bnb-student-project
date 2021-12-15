@@ -322,7 +322,11 @@ h3 {
   .disabled {
     display: none;
   }
+  // .disabled {
+  //   display: none;
+  // }
 }
+
 
 // ===========MAIN BLOCK===========
 
@@ -423,7 +427,9 @@ h3 {
     text-shadow: 1px 2px 7px black, 0 0 0em black;
     font-weight: 400;
     font-size: 1.25rem;
+    
   }
+  
   
   .subdivision-slider {
     display: flex;
@@ -880,9 +886,31 @@ h3 {
   font-weight: 400;
   font-size: 0.875rem;
   color: white;
+  
   @media (min-width: 320px) and (max-width: 568px) {
     font-size: 0.75rem;
   }
+}
+
+._hide_text {
+  filter: opacity(80%);
+  // box-shadow: inset 0px -47px 30px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  // display: block;
+  width: 100%;
+  height: 80px;
+  // text-shadow: 1px 1px 1px #ff0707;
+  // &:after {
+  //   content: "";
+  //   display: block;
+  //   height: 49px;
+  //   position: absolute;
+  //   top: 55px;
+  //   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.247) 75%);
+  //   width: 100%;
+  // box-shadow: inset; 
+  // background-color: red;
+  // }
 }
 
 .room-block {
