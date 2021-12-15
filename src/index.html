@@ -70,7 +70,10 @@
 
         <div class="header__right-side">
           <img class='img3d' src="img/svg/3d.svg" alt="image3d" class="image-3d">
-          <a href="#" class="basket"><img src="img/svg/basket.svg" alt="basket_image"></a>
+          <a href="#" class="basket">
+            <div class="basket__counter"> 0
+            </div>
+            <img src="img/svg/basket.svg" alt="basket_image"></a>
           <button class="button-booking">Забронировать</button>
         </div>
       </div>
@@ -442,10 +445,9 @@
     <header class="our-rooms-header">
       <h3 class="header-events">Наши залы</h3>
     </header>
-<div class="room-types-slider">
 
-  <div class="swiper-wrapper">
-    <div class="room-types swiper-slide">
+  
+    <div class="room-types ">
       
       <div class="room__heading  room__heading_active">Все</div>
       <div class="room__heading ">Банкетные</div>
@@ -453,13 +455,11 @@
       <div class="room__heading ">Индивидуальные</div>
       <div class="room__heading ">Караоке</div>
     </div>
+  
+  <div class="room-types__pagination">
+    <div class="__pagination_string"></div>
   </div>
-  <div class="swiper-scrollbar ">
-    <!-- <svg width="1137" height="2" viewBox="0 0 1137 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect opacity="0.06" width="1137" height="2" rx="1" fill="black"/>
-    </svg> -->
-  </div>
-</div>
+
 
 
     <div class="room-descriptions">
