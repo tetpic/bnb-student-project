@@ -69,6 +69,10 @@ h3 {
     margin-right: 30px;
     padding-left: 0px;
   }
+  @media (min-width: 1250px) and (max-width: 1850px) {
+    margin: 0 auto;
+    padding-left: 0px;
+  }
  
 }
 
@@ -77,45 +81,52 @@ h3 {
 // =============ASIDE================
 
 .aside-bar {
-  .aside-block {
-    margin-top: 461px;
-  }
-  @media (min-width: 320px) and (max-width: 1250px) {
+  overflow: hidden;
+  @media (min-width: 320px) and (max-width: 1850px) {
     display: none;
   }
-  width: 10vw;
-  max-width: 100px;
+  &:hover {
+   width: 300px;
+  }
+  width: 100px;
   height: 1010px;
   background-color: white;
   display: block;
   position: absolute;
-  // vertical-align: center;
-    .line {
-     
-      margin-bottom: 3px;
-      display: block;
-      height: 3px;
-      width: 24px;
-      border-radius: 3px;
+  transition: ease-in-out 0.5s;
+
+  .aside__navigate {
+    cursor: pointer;
+    height: 100px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.075) ;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    transition: ease-in-out .2s;
+    &:hover {
+      border-bottom: 2px solid #E3BF77;
       background-color: #E3BF77;
-      &:first-child {
-        margin-left: 4px;
+      .aside__content {
+        color: white;
       }
-      &:last-child {
-        margin-left: 6px;
+      path {
+        fill: white;
       }
     }
-
-  .uslugi {
-    margin-left: 20px;
-    color: #E3BF77;
-    @include header_fonts;
-    font-weight: 700;
-    font-size: .875rem;
+    svg {
+      margin-left: 27px;
+      margin-right: 32px;
+      height: 32px;
+      width: 43px;
+    }
+    path {
+      fill: #E3BF77;
+    }
   }
-  .burger-aside {
-    margin-bottom: 20px;
-    margin-left: 30px;
+  .aside__content {
+    @include header_fonts; 
+    font-size: 1rem;
+    font-weight: 600;
   }
 }
 
@@ -131,12 +142,21 @@ h3 {
 }
 
 .main-background-images {
+
   min-height: 1010px;
   min-width: 100%;
   position: absolute;
-  @media (min-width: 320px) and (max-width: 750px) {
+  @media (min-height: 700px) and (max-height: 1010px) {
+    min-height: 730px;
+  }
+  @media (min-width: 320px) and (max-width: 850px) {
     min-height: 568px; 
-  }        
+  } 
+  @media (min-width: 850px) and (max-width: 1080px) {
+    min-height: 700px;
+  }
+
+   
   .main-background__image {
     &:nth-last-child(-n+4) {
       filter: brightness(30%);
@@ -161,12 +181,12 @@ h3 {
 
 
 .header-inner {
+  padding-bottom: 5px ;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 35px;
   display: flex;
  position: relative;
  justify-content: space-between;
-
 
   .header__left-side {
     display: flex;
@@ -192,7 +212,7 @@ h3 {
     }
   }
 
-  @media (min-width: 320px) and (max-width: 750px) {
+  @media (min-width: 320px) and (max-width: 850px) {
     padding-top: 25px;
     .header__left-side {
       display: none;
@@ -209,10 +229,7 @@ h3 {
     .button-booking {
       display: none;
     }
-    
-
   }
-
 }
 
 
@@ -259,7 +276,7 @@ h3 {
 
 .burger {
   display: none;
-  @media (min-width: 320px) and (max-width: 750px) {
+  @media (min-width: 320px) and (max-width: 850px) {
       display: block;
       top: 28px;
       z-index: 1;
@@ -287,12 +304,13 @@ h3 {
 }
 
 .header-nav {
-  margin-top: 30px;
+  padding-bottom: 5px;
+  margin-top: 25px;
   position: relative;
   display: flex;
   justify-content: space-between;
 
-  @media (min-width: 320px) and (max-width: 750px) {
+  @media (min-width: 320px) and (max-width: 850px) {
     display: none;
   }
 
@@ -322,9 +340,6 @@ h3 {
   .disabled {
     display: none;
   }
-  // .disabled {
-  //   display: none;
-  // }
 }
 
 
@@ -335,13 +350,11 @@ h3 {
 
 
 
-
 .button_details {
   width: 145px;
   margin-left: 23px;
   border-color: #FFFFFF;
 }
-
 
 .modal-window {
   visibility: hidden;
@@ -378,7 +391,6 @@ h3 {
   }
   .icons-modal {
     display: flex;
-    // flex-direction: row;
     margin: 20px 15px 20px 15px;
     justify-content: space-between;
   }
@@ -394,12 +406,16 @@ h3 {
 
 .company-subdivisions {
   overflow: hidden;
-  height: 380px;
   display: flex;
   flex-direction: column;
   margin-top: 152px;
   color: white;
   font-family: 'Montserrat';
+  @media (min-height: 700px) and (max-height: 1000px) {
+    margin-top: 40px;
+  }
+ 
+
   .swiper-pagination {
     display: none;
     .swiper-pagination-bullet{
@@ -415,13 +431,12 @@ h3 {
     }
   }
   .subdivision__name {
-    height: 92px;
+    height: 87px;
     display: block;
     text-shadow: 1px 2px 7px black, 0 0 0em black;
     font-weight: 700;
     font-size: 3.5rem;
     color: white;
-    // margin-bottom: 23px;
   }
   .subdivision__description {
     text-shadow: 1px 2px 7px black, 0 0 0em black;
@@ -430,12 +445,10 @@ h3 {
     
   }
   
-  
   .subdivision-slider {
     display: flex;
     transition: ease-in-out 1s;
   }
-  
   
   .days {
     text-shadow: 1px 2px 7px black, 0 0 0em black;
@@ -456,7 +469,6 @@ h3 {
     margin-top: 40px;
     margin-bottom: 24px;
     display: flex;
-    // flex-direction: row;
     p{
       text-shadow: 1px 2px 7px black, 0 0 0em black;
       margin: 5px 0px 12px 0px;
@@ -466,12 +478,12 @@ h3 {
       margin-right: 40px;
     }
   }
-  @media (min-width: 320px) and (max-width: 750px) {
+  @media (min-width: 320px) and (max-width: 1080px) {
     margin-top: 80px;
-    // padding-top: 18%;
     height: 427px;
 
     .main__buttons {
+      max-width: 300px;
       width: 50vw;
       min-width: 280px;
     }
@@ -519,11 +531,9 @@ h3 {
       display: block;
       position: inherit;
     }
-
-
   }
 
-  @media (min-width: 569px) and (max-width: 750px) {
+  @media (min-width: 569px) and (max-width: 1080px) {
     .swiper-pagination {
       margin-bottom: 25px;
       display: block;
@@ -543,7 +553,6 @@ h3 {
 .left-button, .right-button, .submit-button {
   -webkit-tap-highlight-color: transparent;
   background-color: transparent;
-  // margin-right: 8px;
   border-style: solid;
   border-width: 0px;
   border-radius: 50px;
@@ -560,10 +569,8 @@ h3 {
 .button_dark {
   svg {
     fill: transparent;
-    // transition: .4s linear;
     path {
       fill: black;
-      // transition: .4s linear;
     }
   }
  svg:active {
@@ -583,8 +590,11 @@ h3 {
   display: flex;
   color: #FFFFFF;
   align-items: flex-end;
-  margin-top: 190px;
+  margin-top: 198px;
   justify-content: space-between;
+  @media (min-height: 700px) and (max-height: 1000px) {
+    margin-top: 40px;
+  }
   .navigation__block {
     font-weight: 600;
     -webkit-tap-highlight-color: transparent;
@@ -603,13 +613,13 @@ h3 {
       pointer-events: none;
     }
     p {
+      font-size: .875rem;
       display: block;
-      height: 35px;
+      height: 26px;
       pointer-events: none;
       z-index: 1;
       @include header_fonts;
-      margin-top: 17px;
-      // margin-bottom: 10px;
+      margin-top: 18px;
     }
     .reactangle {
       pointer-events: none;
@@ -621,7 +631,7 @@ h3 {
     }
   }
 
-  @media (min-width: 320px) and (max-width: 750px) {
+  @media (min-width: 320px) and (max-width: 1080px) {
     display: none;
   }
 }
@@ -637,14 +647,12 @@ h3 {
   display: none;
 }
 
-
 .our-events-sections {
   .swiper-scrollbar {
     position: relative;
-    bottom: -44px;
+    bottom: -40px;
     z-index: 50;
     height: 4px;
-    width: 100%;
     @media (min-width: 320px) and (max-width: 480px) {
       bottom: -15px;
     }
@@ -685,6 +693,13 @@ h3 {
   @media (min-width: 320px) and (max-width: 568px) {
     padding-top: 30px;
   }
+  @media (min-width: 568px) and (max-width: 850px) {
+    padding-top: 40px;
+  }
+  @media (min-width: 850px) and (max-width: 1080px) {
+    padding-top: 140px;
+  }
+
 }
 
 .header-events {
@@ -714,9 +729,8 @@ h3 {
   img {
     object-fit: cover;
     border-radius: 5px;
-    margin: 15px;
+    margin: 15px 21px 0px 0px;
     box-shadow: 0px 15px 20px -15px grey;
-    // margin-left: 0px;
     max-height: 295px;
     @media (min-width: 320px) and (max-width: 479px) {
       width: 251px;
@@ -745,7 +759,7 @@ h3 {
   }
 
   .section__heading {
-    padding-top: 19px;
+    padding-top: 34px;
     @include header_fonts;
     &::after {
       margin: 0px 0 0 8px;
@@ -786,17 +800,17 @@ h3 {
     }
     margin-top: 41px;
   }
-  margin-top: 120px;
+  margin-top: 124px;
 }
 
 .room__heading {
+  line-height: 25px;
   font-weight: 600;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   @include header_fonts;
   opacity: .5;
   display: inline;
-  // width: 150px;
   &:hover {
     color: #E3BF77;
   }
@@ -809,10 +823,12 @@ h3 {
 
 .room-types {
   width: 560px;
-  @media (min-width: 320px) and (max-width: 568px) {
+  @media (min-width: 320px) and (max-width: 590px) {
+    flex-direction: column;
     width: 550px;
+    margin-top: 15px;
   }
-  margin-top: 55px;
+  margin-top: 47px;
   display: flex;
   justify-content: space-between;
   
@@ -835,12 +851,13 @@ h3 {
     margin-bottom: 40px;
     margin-top: -40px;
   }
-  
-
 }
  
 
 .room-types__pagination {
+  @media (min-width: 320px) and (max-width: 590px) {
+    display: none;
+  }
   border-radius: 3px;
   margin-top: 10px;
   background-color: rgba(0, 0, 0, 0.144);
@@ -858,17 +875,16 @@ h3 {
 
 
 .room-descriptions {
-  margin-top: 23px;
+  margin-top: 53px;
   margin-bottom: 90px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
   @media (min-width: 320px) and (max-width: 520px) {
-    // display: flex;
     flex-direction: column;
     margin-bottom: 50px;
-    margin-top: 5px;
+    margin-top: 15px;
   }
 
 
@@ -893,37 +909,32 @@ h3 {
 }
 
 ._hide_text {
-  filter: opacity(80%);
-  // box-shadow: inset 0px -47px 30px rgba(0, 0, 0, 0.14);
+  background: linear-gradient(180deg, #ffffff 40%, #ffffff26 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   overflow: hidden;
-  // display: block;
   width: 100%;
-  height: 80px;
-  // text-shadow: 1px 1px 1px #ff0707;
-  // &:after {
-  //   content: "";
-  //   display: block;
-  //   height: 49px;
-  //   position: absolute;
-  //   top: 55px;
-  //   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.247) 75%);
-  //   width: 100%;
-  // box-shadow: inset; 
-  // background-color: red;
-  // }
+  height: 100px;
+
 }
 
 .room-block {
+  left: 0px;
+  top: 0px;
+  text-decoration: none;
   @include header_fonts;
   height: 320px;
-  max-width: 555px;
-  width: 100%;
+  width: 555px;
   overflow: hidden;
-  // margin-top: 20px;
   position: relative;
   border-radius: 8px;
-  // margin: 0px 20px 20px 0px ;
     margin-bottom: 30px;
+  &:hover{
+    top: -4px;
+    box-shadow: 0px 4px 5px #00000085;
+    transition: linear 0.1s;
+  }
   @media (min-width: 320px) and (max-width: 419.9px) {
     max-width: 350px;
     width: 100%;
@@ -943,7 +954,7 @@ h3 {
     min-height: 280px;
     height: 27vh;
   }
-  @media (min-width: 1001px) and (max-width: 1180px) {
+  @media (min-width: 1001px) and (max-width: 1220px) {
     width: 44vw;
     min-height: 280px;
     height: 27vh;
@@ -994,7 +1005,6 @@ h3 {
     @media (min-width: 320px) and (max-width: 700px) {
       font-size: .875rem;
     }
-    
     padding-bottom: 10px;
   }
 
@@ -1007,7 +1017,6 @@ h3 {
   }
  
   .occupancy {
-    // width: 100px;
     left: 40px;
     top: 43px;
     display: inline;
@@ -1053,10 +1062,9 @@ h3 {
   img{
     -webkit-filter: drop-shadow(-2px 3px 9px rgba(0, 0, 0, 0.384));
     filter: drop-shadow(-2px 3px 9px rgba(0, 0, 0, 0.384));
-    // box-shadow: 0px 0px 0px 0px black;
     position: absolute;
-    right: -10%;
-    top: -70%;
+    left: 50vw;
+    bottom: -22vh;
     z-index: 0;
     @media (min-width: 320px) and (max-width: 568px) {
       right: -180px;
@@ -1131,7 +1139,7 @@ h3 {
   font-size: 1.25rem;
   padding-top: 30px;
   line-height: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 34px;
   @media (min-width: 320px) and (max-width: 568px) {
     font-size: 0.875rem;
     line-height: 21px;
@@ -1158,7 +1166,6 @@ h3 {
 
   padding-top: 116px;
   display: flex;
-  // flex-direction: row;
   justify-content: space-between;
   align-items: center;
   @media (min-width: 320px) and (max-width: 568px) {
@@ -1173,13 +1180,12 @@ h3 {
 
 .photo-reports {
   display: flex;
-  // flex-direction: row;
-  padding-top: 42px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 119px;
   @media (min-width: 320px) and (max-width: 568px) {
     height: 207px;
     padding-top: 15px;
-    padding-bottom: 30px;
+    padding-bottom: 110px;
   }
 }
 
@@ -1205,7 +1211,6 @@ h3 {
 }
 
 .photo-report-block {
-  // margin-right: 3%;
   position: relative;
   img {
     height: 100%;
@@ -1270,10 +1275,9 @@ h3 {
 }
 
 .footer-header {
-  padding-top: 55px;
+  padding-top: 35px;
   height: 185px;
   display: flex;
-  // flex-direction: row;
   justify-content: space-between;
   @media (min-width: 320px) and (max-width: 600px) {
     flex-direction: column;
@@ -1285,7 +1289,6 @@ h3 {
     text-align: center;
     flex-wrap: wrap;
     height: 250px;
-    // flex-direction: row;
     justify-content: space-around;
   }
 
@@ -1295,6 +1298,7 @@ h3 {
 
 .call-request__link{
   a{
+    margin-left: 5px;
     font-family:'Montserrat';
     font-size: .875rem;
     font-weight: 600;
@@ -1304,8 +1308,6 @@ h3 {
 }
 
 .call-request {
-  // margin-left: 20px;
-
   .button-booking {
     margin-bottom: 30px;
   }
@@ -1320,36 +1322,43 @@ h3 {
   }
 }
 
+.mail-enter-form {
+  &:hover {
+    .email__placeholder {
+      top: 10px;
+    }
+  }
+  border-bottom: 2px solid rgba(255, 255, 255, 0.356);
+}
+
 .email-form {
   margin-left: 50px;
   min-width: 265px;
     width: 270px;
   .mail__description {
+    margin-top: 5px;
     font-family:'Montserrat';
     font-weight: 400;
     font-size: .875rem;
     color: white;
     line-height: 21px;
-    margin-bottom: 30px;
-   
-  
-   
+    margin-bottom: 13px;
+    @media (min-width: 320px) and (max-width: 850px) {
+      text-align: center;
+    }
   }
 
   input{
-    
+    width: 210px;
     text-decoration: none;
     background: transparent;
     border: none;
-    border-bottom: 2px solid #ffffff1a;
     color: white;
   }  
-
 }
 
 .social__media {
   display: flex;
-  // flex-direction: row;
   width: 102px;
   justify-content: space-between;
 }
@@ -1376,6 +1385,8 @@ h3 {
   .email-form {
     margin-left: 10px;
     padding-bottom: 50px;
+   
+    }
   }
 
   .social-media {
@@ -1383,13 +1394,28 @@ h3 {
     align-items: flex-end;
   }
 
-  .mail__description {
-    
-    text-align: center;
-    margin-bottom: 20px;
-  }
+  // .mail__description {
+  
+  //   // text-align: center;
+  //   // margin-bottom: 20px;
+  // }
+
+
+.email__placeholder {
+  position: relative;
+  top: 20px;
+  @include header_fonts;
+  font-size: .875rem;
+  color: rgba(255, 255, 255, 0.575);
+  font-weight: 400;
+  transition: ease-in-out .3s;
 }
 
+.submit-button {
+  position: relative;
+  top: -8px;
+  left: 10px;
+}
 
 // ==========COPYRIGHTS================
 
@@ -1399,7 +1425,6 @@ h3 {
   justify-content: space-between;
   position: relative;
   padding-top: 1.6rem;
-
 }
 
 .copyrights {
@@ -1409,11 +1434,9 @@ h3 {
   font-family: 'Montserrat';
   font-size: .875rem;
   font-weight: 400;
-
 }
 
 .copyright {
-  // position: relative;
   p{
     color: white;
     opacity: .5;
@@ -1422,7 +1445,6 @@ h3 {
 
 .article-links {
   display: flex;
-  // flex-direction: row;
   justify-content: space-between;
   width: 323px;
   opacity: .5;

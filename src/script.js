@@ -1,8 +1,7 @@
+// const { active } = require("browser-sync");
+
 let leftButton = document.querySelectorAll('.left-button')
 let rightButton = document.querySelectorAll('.right-button')
-
-
-
 
 let swiper = new Swiper('.company-subdivisions', {
   navigation: {
@@ -10,7 +9,6 @@ let swiper = new Swiper('.company-subdivisions', {
           prevEl: leftButton[0],
   },
   wrapperClass: 'swiper-wrapper',
-  // autoHeight: true,
   slideClass: 'subdivision',
       pagination: {
         el: '.swiper-pagination'
@@ -56,7 +54,6 @@ burgerMenuOff.addEventListener('click', function() {
 
 
 let swiper2 = new Swiper('.our-events-sections', {
-  // spaceBetween: 5,
   navigation: {
     nextEl: '.next',
     prevEl: '.prev',
@@ -74,41 +71,23 @@ let swiper2 = new Swiper('.our-events-sections', {
 
   wrapperClass: 'swiper-wrapper',
   slideClass: 'event-section',
-  // autoHeight: true,
-  // breakpoints: {
-  //   320: {
-  //     slidesPerView: 1,
-  //   },
-  //   480: {
-  //     slidesPerView: 2,
-  //   },
-  //   640: {
-  //     slidesPerView: 3,
-  //   },
-  // }, 
-  // slidesPerView: 3,
-  // setWrapperSize: true,
 });
 
 let roomTypes = document.querySelectorAll('.room__heading')
 let roomBlocks = document.querySelectorAll('.room-block')
 let pagination = document.querySelector('.__pagination_string');
 
-
 let setDefaultPagination = () => {
   let paginationDefault = roomTypes[0].getBoundingClientRect()
   pagination.style.width = (paginationDefault.width) + 'px'
 };
-
 setDefaultPagination();
 
 
 roomTypes.forEach(function (roomType) {
   roomType.addEventListener('click', function(event) {
-
     activeIndex = Array.from(roomTypes).indexOf(event.target)
-
-  
+    roomIndex = Array.from(roomBlocks)
 
     roomBlocks.forEach(function(activate){
       activate.classList.remove('disabled')
@@ -116,79 +95,51 @@ roomTypes.forEach(function (roomType) {
     roomTypes.forEach(function(disable) {
       disable.classList.remove('room__heading_active')
     })
-
     roomTypes[activeIndex].classList.add('room__heading_active');
-
-    console.log(roomTypes[activeIndex]);
-
     let roomTypeProperties = roomTypes[activeIndex].getBoundingClientRect()
 
-    console.log(roomTypeProperties.left);
-    
-
-    
     pagination.style.transitionDuration = '0.3s';
     pagination.style.width = (roomTypeProperties.width) + 'px';
-    // pagination.style.transform = 'translateX('+ (roomTypeProperties.left)+ 'px)'
     pagination.style.left = (roomTypeProperties.left) + 'px';
-
-    // pagination.style.transform = 'translateX('+(roomTypeProperties.left)+')'
     
-    const every = 0
     const banketRooms = 1
     const publicRooms = 2
     const individualRooms = 3
     const karaokeRooms = 4
 
     if (activeIndex == banketRooms) {
-      document.querySelectorAll('._karaoke').forEach(function(disable){
-        disable.classList.add('disabled')
+      roomBlocks.forEach(function (el) {
+        if (el.dataset.roomtype != 'room') {
+          el.classList.add('disabled')
+        }
       })
     }
+
     else if (activeIndex == publicRooms) {
-      document.querySelectorAll('._individual').forEach(function(disable){
-        disable.classList.add('disabled')
+      roomBlocks.forEach(function (block) {
+        if (block.querySelector('.fill').innerText <= +40) {
+          block.classList.add('disabled')
+        }
       })
     }
+
     else if (activeIndex == individualRooms) {
-      document.querySelectorAll('._public').forEach(function(disable){
-        disable.classList.add('disabled')
+      roomBlocks.forEach(function (el) {
+        if (el.querySelector('.fill').innerText > +40) {
+          el.classList.add('disabled')
+        }
       })
     }
+
     else if (activeIndex == karaokeRooms) {
-      document.querySelectorAll('._banket').forEach(function(disable){
-        disable.classList.add('disabled')
+      roomBlocks.forEach(function (el) {
+        if (el.dataset.roomtype != 'karaoke') {
+          el.classList.add('disabled')
+        }
       })
-    }
-    else if (activeIndex == every) {
-      document.querySelectorAll('.room-block').forEach(function(activate){
-        activate.classList.remove('disabled')
-      })
-    }
-    else {
-      console.log('error')
     }
 })})
 
-
-// let roomSwiper = new Swiper ('.room-types-slider', {
-//   spaceBetween: 30,
-//   slidesPerView: "auto",
-//   scrollbar: {
-//     el: ".swiper-scrollbar",
-//   },
-//   breakpoints: {
-//     320: {
-//       allowTouchMove: true,
-//     },
-//     480: {
-//       allowTouchMove: true,
-//     },
-//     880: {
-//       allowTouchMove: false,
-//     },
-//   },
-// })
 
 
 let reportSwiper = new Swiper ('.photo-reports', {
@@ -217,8 +168,7 @@ let basketCounter = document.querySelector('.basket__counter')
 
 
 let basketCounterLength = () => {
-  // basketCounter.classList.add('disabled')
-  // basketCounter.innerText = prompt('сколько будем покупать?')
+  basketCounter.innerText = prompt('сколько позиций мы положили в корзинку?')
   
   if (+(basketCounter.innerText) == +0) {
     
@@ -240,17 +190,18 @@ basketCounterLength()
 let sectionDescription = document.querySelectorAll('.section__description')
 
 let setHideTextfunction = () => {
-  // let index = Array.from(sectionDescription)
-  for (let i = 0; i <= sectionDescription.length; i++) {
-    if (+(sectionDescription[i].innerText.length) >= +100){
+  for (let i = 0; i < sectionDescription.length; i++) {
+    console.log(i)
+    if (+sectionDescription[i].innerText.length >= +150){
       sectionDescription[i].classList.add('_hide_text')
+      let text = sectionDescription[i].innerText;
+      sectionDescription[i].innerText = text.substr(0,130) + (' ... ')
     }
     else {
-      console.log ('error')
+      console.log ('it"s all okay')
     }
-  
   }
-  
 }
+setHideTextfunction ();
 
-// setHideTextfunction();
+
