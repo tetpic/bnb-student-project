@@ -17,7 +17,7 @@ let swiper = new Swiper('.company-subdivisions', {
 
  
 
-  
+  let asideNav = document.querySelectorAll('.aside__navigate')
   let navBlocks = document.querySelectorAll('.navigation__block')
   let backgroundImages = document.querySelectorAll('.main-background__image')
   
@@ -29,7 +29,12 @@ swiper.on('activeIndexChange', function () {
 })
 
 
-
+asideNav.forEach(function (asideEl) {
+  asideEl.addEventListener('click', function(e) {
+    i = Array.from(asideNav).indexOf(e.target)
+    swiper.slideTo(i);
+  })
+})
 
 navBlocks.forEach(function(navBlock){
   navBlock.addEventListener('click', function(event){

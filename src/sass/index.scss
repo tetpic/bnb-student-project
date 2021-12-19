@@ -114,6 +114,7 @@ h3 {
       }
     }
     svg {
+      pointer-events: none;
       margin-left: 27px;
       margin-right: 32px;
       height: 32px;
@@ -124,10 +125,43 @@ h3 {
     }
   }
   .aside__content {
+    pointer-events: none;
     @include header_fonts; 
     font-size: 1rem;
     font-weight: 600;
   }
+}
+
+.aside-social-media {
+  margin-top: 230px;
+  .media__link {
+    img {
+    width: 23px;
+    margin-left: 11px;
+    margin-right: 32px;
+    height: 22px;
+    }
+    color: black;
+    @include header_fonts; 
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    width: 300px;
+    margin-left: 27px;
+    height: 40px;
+    align-items: center;
+    opacity: 0.4;
+    
+    &:hover {
+      opacity: 1;
+    }
+    .media__name {
+    margin-left: 13px;
+    }
+  }
+
 }
 
 

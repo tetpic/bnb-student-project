@@ -100,6 +100,7 @@ h3 {
   fill: white;
 }
 .aside-bar .aside__navigate svg {
+  pointer-events: none;
   margin-left: 27px;
   margin-right: 32px;
   height: 32px;
@@ -109,9 +110,40 @@ h3 {
   fill: #E3BF77;
 }
 .aside-bar .aside__content {
+  pointer-events: none;
   font-family: "Montserrat";
   font-size: 1rem;
   font-weight: 600;
+}
+
+.aside-social-media {
+  margin-top: 230px;
+}
+.aside-social-media .media__link {
+  color: black;
+  font-family: "Montserrat";
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  width: 300px;
+  margin-left: 27px;
+  height: 40px;
+  align-items: center;
+  opacity: 0.4;
+}
+.aside-social-media .media__link img {
+  width: 23px;
+  margin-left: 11px;
+  margin-right: 32px;
+  height: 22px;
+}
+.aside-social-media .media__link:hover {
+  opacity: 1;
+}
+.aside-social-media .media__link .media__name {
+  margin-left: 13px;
 }
 
 .header {
