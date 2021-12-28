@@ -2,3 +2,4 @@ gulpfile1.js
 node_modules/*
 dist/*
 desktop.ini
+src/*
